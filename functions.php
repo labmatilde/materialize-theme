@@ -136,7 +136,7 @@ add_action( 'widgets_init', 'materialize_css_widgets_init' );
 function materialize_css_scripts() {
 	if( !is_admin()){	 
 	 	wp_deregister_script('jquery');
-	 	#wp_enqueue_script( 'materialize-css-jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', '', null, true );
+	 	wp_enqueue_script( 'materialize-css-jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', '', null, true );
 	}
 	$themecolors = get_theme_mod('materialize_colors');
 	wp_enqueue_style('material-colors', get_template_directory_uri() . '/css/'. $themecolors);
