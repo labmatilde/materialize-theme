@@ -219,6 +219,12 @@ function materialize_controls($wp_customize)
 }
 add_action('customize_register', 'materialize_controls');
 
+
+function acf_function() {
+	require_once('acf-functions.php');
+}
+add_action( 'init', 'acf_function', 0 );
+
 /*Materialize Paginador*/
 // function materialize_pagination() {
 // 	global $wp_query;
