@@ -19,11 +19,13 @@ get_header(); ?>
 		<div class="col m1 l1"></div>
 		<div class="col s12 m8 l8">
 
-			<?php if( have_rows('sobre', 'option') ):
+			<?php 
+			$page_id = get_the_ID();
+			if( have_rows('sobre', 'option') ):
 				while( have_rows('sobre', 'option') ) : the_row(); 
 					if (get_sub_field('habilitar')): 
 						$page_data = get_sub_field('pagina');
-						if ($page_data->ID == get_the_ID()) :
+						if ($page_data['ID'] == $page_id) :
 							print_r(get_sub_field('titulo'));
 							print_r(get_sub_field('descricao'));
 							print_r(get_sub_field('imagem')); 
