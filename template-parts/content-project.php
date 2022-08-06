@@ -27,7 +27,7 @@
             <div class="col s12 m4">
                 <div class="card sticky-action hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="<?php get_template_directory_uri(); ?>/assets/images/cartaz-familia-lam.png">
+                        <img class="activator" src="<?php the_post_thumbnail('medium'); ?>">
                     </div> <!-- card-image -->
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><?php $value->post_title; ?><i
