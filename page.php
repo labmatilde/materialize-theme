@@ -33,7 +33,7 @@ get_header(); ?>
 								foreach ($image as $key => $value):
 									?>
 									<pre>
-									<?php print_r($value); ?>
+									<?php print_r($key); ?>
 									</pre>
 									<?php
 								endforeach;
