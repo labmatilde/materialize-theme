@@ -37,7 +37,6 @@ get_header(); ?>
 									</pre>
 									<?php
 								endforeach;
-								print_r(get_sub_field('imagem')); 
 								print_r(get_sub_field('sub_titulo')); 
 								print_r(get_sub_field('sub_descricao')); 
 								$cards = get_sub_field('cards');
