@@ -14,7 +14,7 @@
 
 	<?php echo get_the_ID(  ); ?>
 	<p> teste </p>
-	<?php echo get_post(); ?>
+	<?php print_r(get_post()); ?>
 	<br>
 
 <?php if( have_rows('sobre', 'option') ):
