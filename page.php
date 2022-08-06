@@ -16,8 +16,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<div class="col m1 l1"></div>
-		<div class="col s12 m8 l8">
+		<div class="col s12 m12 l12">
 			<?php
 			while ( have_posts() ) : the_post();
 
@@ -32,7 +31,6 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 		</div>
-		<div class="col m1 l1"></div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
