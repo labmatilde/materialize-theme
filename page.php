@@ -32,7 +32,10 @@ get_header(); ?>
 								print_r(get_sub_field('imagem')); 
 								print_r(get_sub_field('sub_titulo')); 
 								print_r(get_sub_field('sub_descricao')); 
-								print_r(get_sub_field('cards')); 
+								$cards = get_sub_field('cards');
+								foreach ($cards as $key => $value):
+									print_r($value); 
+								endforeach;
 							endif; 
 						endforeach;
 					endif; 
