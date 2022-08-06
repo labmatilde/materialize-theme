@@ -26,7 +26,7 @@ get_header(); ?>
 					if (get_sub_field('habilitar')): 
 						$page_data = get_sub_field('pagina');
 						foreach( $page_data as $value):
-							if ($value['ID'] == $page_id) :
+							if ($value->ID == $page_id) :
 								print_r(get_sub_field('titulo'));
 								print_r(get_sub_field('descricao'));
 								print_r(get_sub_field('imagem')); 
