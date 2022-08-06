@@ -19,11 +19,9 @@
 
             <?php 
 			if (get_sub_field('projetos')):
-			$projects = get_sub_field('projetos'); ?> <pre><?php print_r($projects); ?></pre> <?php
+			$projects = get_sub_field('projetos');
             foreach($projects as $key => $value): ?>
-			
-
-
+		
             <div class="col s12 m4">
                 <div class="card sticky-action hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
