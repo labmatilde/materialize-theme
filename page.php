@@ -18,40 +18,11 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 		<div class="col m1 l1"></div>
 		<div class="col s12 m8 l8">
-
-			<?php 
-			$page_id = get_the_ID();
-			if( have_rows('sobre', 'option') ):
-				while( have_rows('sobre', 'option') ) : the_row(); 
-					if (get_sub_field('habilitar')): 
-						$page_data = get_sub_field('pagina');
-						foreach( $page_data as $value):
-							if ($value->ID == $page_id) :
-								print_r(get_sub_field('titulo'));
-								print_r(get_sub_field('descricao'));
-								$image = get_sub_field('imagem');
-								print_r($image['name']);
-								print_r($image['description']);
-								print_r($image['sizes']['large']);
-								
-	
-								print_r(get_sub_field('sub_titulo')); 
-								print_r(get_sub_field('sub_descricao')); 
-								$cards = get_sub_field('cards');
-								foreach ($cards as $key => $value):
-									print_r($value['titulo']);
-									print_r($value['descricao']);
-								endforeach;
-							endif; 
-						endforeach;
-					endif; 
-				endwhile; 
-			endif; ?>
-
 			<?php
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
+				get_template_part( 'template-parts/content', 'about' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
