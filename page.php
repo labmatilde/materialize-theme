@@ -38,7 +38,6 @@ get_header(); ?>
 								print_r(get_sub_field('sub_descricao')); 
 								$cards = get_sub_field('cards');
 								foreach ($cards as $key => $value):
-									print_r($key);
 									print_r($value['descricao']);
 								endforeach;
 							endif; 
