@@ -31,7 +31,7 @@ get_header(); ?>
 								print_r(get_sub_field('descricao'));
 								$image = get_sub_field('imagem'); ?>
 								<pre>
-								<?php print_r($image);/*
+								<?php print_r($image['sizes']);/*
 								foreach ($image as $key => $value):
 									print_r($value['thumbnail']);
 								endforeach; 
