@@ -16,6 +16,8 @@
     while( have_rows('sobre', 'option') ) : the_row(); 
         if (get_sub_field('habilitar')): 
 			$page_data = get_sub_field('pagina');
+			echo $page_data['ID'];
+			echo the_ID();
 			if ($page_data['ID'] == the_ID()) :
 				print_r(get_sub_field('titulo'));
 				print_r(get_sub_field('descricao'));
