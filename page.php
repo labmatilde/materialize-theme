@@ -31,11 +31,11 @@ get_header(); ?>
 								print_r(get_sub_field('descricao'));
 								$image = get_sub_field('imagem'); ?>
 								<pre>
-								<?php print_r($image['sizes']);/*
+								<?php print_r($image['sizes']['large']);
 								foreach ($image as $key => $value):
-									print_r($value['thumbnail']);
+									print_r($value['sizes']['large']);
 								endforeach; 
-								*/
+								
 								?> </pre><?php
 								print_r(get_sub_field('sub_titulo')); 
 								print_r(get_sub_field('sub_descricao')); 
