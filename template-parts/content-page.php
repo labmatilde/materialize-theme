@@ -15,7 +15,7 @@
 <?php if( have_rows('sobre', 'option') ):
     while( have_rows('sobre', 'option') ) : the_row(); 
         if (get_sub_field('habilitar')): 
-        print_r(get_sub_field('pagina')); ?>
+        print_r(get_sub_field('pagina')); endif; endwhile; endif; ?>
 
 
 		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
