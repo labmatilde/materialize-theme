@@ -23,7 +23,7 @@ get_header(); ?>
 				while( have_rows('sobre', 'option') ) : the_row(); 
 					if (get_sub_field('habilitar')): 
 						$page_data = get_sub_field('pagina');
-						if ($page_data['ID'] == get_the_ID()) :
+						if ($page_data->ID == get_the_ID()) :
 							print_r(get_sub_field('titulo'));
 							print_r(get_sub_field('descricao'));
 							print_r(get_sub_field('imagem')); 
