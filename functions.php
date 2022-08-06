@@ -36,6 +36,8 @@ function materialize_css_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'post-formats', array( 'status', 'gallery', 'image', 'video', 'link' ) );
+
 	add_theme_support( 'custom-logo', array(
 			'height'      => 64,
 			'width'       => 400,
