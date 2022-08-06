@@ -37,6 +37,19 @@ get_header(); ?>
 					endwhile;
 				endif;
 
+				if( have_rows('projetos', 'option') ):
+					while( have_rows('projetos', 'option') ) : the_row(); 
+						if (get_sub_field('habilitar')): 
+							$page_data = get_sub_field('pagina');
+							foreach( $page_data as $value):
+								if ($value->ID == $page_id):
+									get_template_part( 'template-parts/content', 'project' );
+								endif;
+							endforeach;
+						endif;
+					endwhile;
+				endif;
+
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
