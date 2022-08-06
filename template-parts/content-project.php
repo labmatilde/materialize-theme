@@ -44,7 +44,7 @@
                 </div> <!-- card -->
             </div> <!-- col -->
 
-            <?php endif; endforeach; endif; ?>
+            <?php endforeach; endif; ?>
         
         </div> <!-- .row -->
     </div> <!-- .container -->
