@@ -185,8 +185,6 @@ function kit_post_type() {
 add_action( 'init', 'kit_post_type', 0 );
 */
 
-
-
 // Register TGMPA
 #require_once(get_template_directory() . '/includes/tgmpa/tgmpa-configuration.php');
 
