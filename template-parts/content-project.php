@@ -25,7 +25,7 @@
             <div class="col s12 m4">
                 <div class="card sticky-action hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="<?php the_post_thumbnail('medium'); ?>">
+						<?php the_post_thumbnail('post-thumbnail', ['class' => 'activator', 'title' => $value->post_title;]); ?>
                     </div> <!-- card-image -->
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><?php $value->post_title; ?><i
