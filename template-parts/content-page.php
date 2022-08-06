@@ -12,16 +12,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 
-	<?php echo get_the_ID(  ); ?>
-	<p> teste </p>
-	<?php print_r(get_post()); ?>
-	<br>
-
 <?php if( have_rows('sobre', 'option') ):
     while( have_rows('sobre', 'option') ) : the_row(); 
         if (get_sub_field('habilitar')): 
 			$page_data = get_sub_field('pagina');
-			if ($page_data['ID'] == get_the_ID()) :
+			if ($page_data['ID'] == the_ID()) :
 				print_r(get_sub_field('titulo'));
 				print_r(get_sub_field('descricao'));
 				print_r(get_sub_field('imagem')); 
