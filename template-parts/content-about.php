@@ -6,15 +6,8 @@
  *
  * @package materialize_css
  */
+?>
 
-$page_id = get_the_ID();
-if( have_rows('sobre', 'option') ):
-	while( have_rows('sobre', 'option') ) : the_row(); 
-		if (get_sub_field('habilitar')): 
-			$page_data = get_sub_field('pagina');
-			foreach( $page_data as $value):
-				if ($value->ID == $page_id): ?>
-				
 <!-- SOBRE -->
 <section id="sobre">
 	<div class="container">
@@ -61,10 +54,3 @@ if( have_rows('sobre', 'option') ):
 
 	</div>
 </section> <!-- #sobre -->
-
-<?php 
-endif; 
-endforeach; 
-endif; 
-endwhile; 
-endif; 

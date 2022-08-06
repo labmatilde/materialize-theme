@@ -18,10 +18,24 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 		<div class="col s12 m12 l12">
 			<?php
+			$page_id = get_the_ID();
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
-				get_template_part( 'template-parts/content', 'about' );
+				if (get_the_content()):
+					get_template_part( 'template-parts/content', 'page' );
+				endif;
+				if( have_rows('sobre', 'option') ):
+					while( have_rows('sobre', 'option') ) : the_row(); 
+						if (get_sub_field('habilitar')): 
+							$page_data = get_sub_field('pagina');
+							foreach( $page_data as $value):
+								if ($value->ID == $page_id):
+									get_template_part( 'template-parts/content', 'about' );
+								endif;
+							endforeach;
+						endif;
+					endwhile;
+				endif;
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
