@@ -11,26 +11,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-
-<?php if( have_rows('sobre', 'option') ):
-    while( have_rows('sobre', 'option') ) : the_row(); 
-        if (get_sub_field('habilitar')): 
-			$page_data = get_sub_field('pagina');
-			echo $page_data['ID'];
-			echo the_ID();
-			if ($page_data['ID'] == the_ID()) :
-				print_r(get_sub_field('titulo'));
-				print_r(get_sub_field('descricao'));
-				print_r(get_sub_field('imagem')); 
-				print_r(get_sub_field('sub_titulo')); 
-				print_r(get_sub_field('sub_descricao')); 
-        		print_r(get_sub_field('cards')); 
-			endif; 
-		endif; 
-	endwhile; 
-endif; ?>
-
-
 		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
 	</header><!-- .entry-header -->
 

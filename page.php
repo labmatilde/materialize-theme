@@ -18,6 +18,23 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 		<div class="col m1 l1"></div>
 		<div class="col s12 m8 l8">
+
+			<?php if( have_rows('sobre', 'option') ):
+				while( have_rows('sobre', 'option') ) : the_row(); 
+					if (get_sub_field('habilitar')): 
+						$page_data = get_sub_field('pagina');
+						if ($page_data['ID'] == the_ID()) :
+							print_r(get_sub_field('titulo'));
+							print_r(get_sub_field('descricao'));
+							print_r(get_sub_field('imagem')); 
+							print_r(get_sub_field('sub_titulo')); 
+							print_r(get_sub_field('sub_descricao')); 
+							print_r(get_sub_field('cards')); 
+						endif; 
+					endif; 
+				endwhile; 
+			endif; ?>
+
 			<?php
 			while ( have_posts() ) : the_post();
 
