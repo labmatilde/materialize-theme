@@ -24,16 +24,17 @@ get_header(); ?>
 			if( have_rows('sobre', 'option') ):
 				while( have_rows('sobre', 'option') ) : the_row(); 
 					if (get_sub_field('habilitar')): 
-						$page_data = get_sub_field('pagina')[0];
-						print_r($page_data);
-						if ($page_data['ID'] == $page_id) :
-							print_r(get_sub_field('titulo'));
-							print_r(get_sub_field('descricao'));
-							print_r(get_sub_field('imagem')); 
-							print_r(get_sub_field('sub_titulo')); 
-							print_r(get_sub_field('sub_descricao')); 
-							print_r(get_sub_field('cards')); 
-						endif; 
+						$page_data = get_sub_field('pagina');
+						foreach( $page_data as $value):
+							if ($value['ID'] == $page_id) :
+								print_r(get_sub_field('titulo'));
+								print_r(get_sub_field('descricao'));
+								print_r(get_sub_field('imagem')); 
+								print_r(get_sub_field('sub_titulo')); 
+								print_r(get_sub_field('sub_descricao')); 
+								print_r(get_sub_field('cards')); 
+							endif; 
+						endforeach;
 					endif; 
 				endwhile; 
 			endif; ?>
