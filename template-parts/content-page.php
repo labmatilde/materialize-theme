@@ -11,6 +11,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+
+<?php if( have_rows('sobre', 'option') ):
+    while( have_rows('sobre', 'option') ) : the_row(); 
+        if (get_sub_field('habilitar')): 
+        print_r(get_sub_field('pagina')); ?>
+
+
 		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
 	</header><!-- .entry-header -->
 
