@@ -31,14 +31,14 @@ get_header(); ?>
 								print_r(get_sub_field('descricao'));
 								$image = get_sub_field('imagem');
 								foreach ($image as $key => $value):
-									print_r($value);
+									print_r($value->sizes);
 								endforeach;
 								print_r(get_sub_field('imagem')); 
 								print_r(get_sub_field('sub_titulo')); 
 								print_r(get_sub_field('sub_descricao')); 
 								$cards = get_sub_field('cards');
 								foreach ($cards as $key => $value):
-									print_r($value); 
+									print_r($value->descricao); 
 								endforeach;
 							endif; 
 						endforeach;
