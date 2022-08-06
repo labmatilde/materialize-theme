@@ -19,8 +19,9 @@
 
             <?php 
 			if (get_sub_field('projetos')):
-			$projects = get_sub_field('projetos'); 
+			$projects = get_sub_field('projetos'); ?> <pre><?php print_r($projects); ?></pre> <?php
             foreach($projects as $key => $value): ?>
+			
 
 
             <div class="col s12 m4">
