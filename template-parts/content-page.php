@@ -12,7 +12,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 
-<?php echo get_the_ID(  ); . ' teste ' . echo get_post(); . ' if ' if( have_rows('sobre', 'option') ):
+	<?php echo get_the_ID(  ); ?>
+	<p> teste </p>
+	<?php echo get_post(); ?>
+	<br>
+
+<?php if( have_rows('sobre', 'option') ):
     while( have_rows('sobre', 'option') ) : the_row(); 
         if (get_sub_field('habilitar')): 
         print_r(get_sub_field('pagina')); endif; endwhile; endif; ?>
