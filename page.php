@@ -24,7 +24,7 @@ get_header(); ?>
 			if( have_rows('sobre', 'option') ):
 				while( have_rows('sobre', 'option') ) : the_row(); 
 					if (get_sub_field('habilitar')): 
-						$page_data = get_sub_field('pagina');
+						$page_data = get_sub_field('pagina')[0];
 						print_r($page_data);
 						if ($page_data['ID'] == $page_id) :
 							print_r(get_sub_field('titulo'));
