@@ -33,7 +33,7 @@ get_header(); ?>
 								<pre>
 								<?php 
 								foreach ($image as $key => $value):
-									print_r($value);
+									print_r($value->thumbnail);
 								endforeach; 
 								?> </pre><?php
 								print_r(get_sub_field('sub_titulo')); 
