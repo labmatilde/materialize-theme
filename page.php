@@ -29,14 +29,12 @@ get_header(); ?>
 							if ($value->ID == $page_id) :
 								print_r(get_sub_field('titulo'));
 								print_r(get_sub_field('descricao'));
-								$image = get_sub_field('imagem'); ?>
-								<pre>
-								<?php print_r($image['sizes']['large']);
-								foreach ($image as $key => $value):
-									print_r($value->sizes);
-								endforeach; 
+								$image = get_sub_field('imagem');
+								print_r($image['name']);
+								print_r($image['description']);
+								print_r($image['sizes']['large']);
 								
-								?> </pre><?php
+	
 								print_r(get_sub_field('sub_titulo')); 
 								print_r(get_sub_field('sub_descricao')); 
 								$cards = get_sub_field('cards');
