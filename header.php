@@ -27,7 +27,7 @@
 	<?php if( have_rows('dados', 'option') ):
     while( have_rows('dados', 'option') ) : the_row(); ?>
 	<pre>
-		<?php print_r(get_sub_field('mostrar')); ?>
+		<?php print_r(get_sub_field('chaves')); ?>
 	</pre>
 
 		<!-- TOP MENU -->
