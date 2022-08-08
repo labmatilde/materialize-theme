@@ -129,17 +129,23 @@
 					</a>
 
 					<ul class="right hide-on-med-and-down">
-						<li><a href="#sobre">Sobre</a></li>
-						<li><a href="#projetos">Projetos</a></li>
-						<li><a href="#voluntarios">Seja um Voluntario</a></li>
-						<li><a href="#eventos">Eventos</a></li>
-						<li><a href="blog.html">Blog</a></li>
-						<li><a href="#contato">Contato</a></li>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary')); ?>
 						<li><a href="#doe" class="waves-effect waves-light btn">Faça uma doação</a></li>
 					</ul>
 
 					<ul class="side-nav" id="mobile-lam">
-						<li><img class="logo-mobile" src="<?= get_template_directory_uri(); ?>/assets/images/logo_lam_claro.png" alt=""></li>
+						<li>
+						<?php
+							$custom_logo_id = get_theme_mod( 'custom_logo' );
+							if($custom_logo_id) {
+								$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+								echo '<img class="logo-mobile" src="'.$image[0].'">';
+							}
+							else {
+								echo '<p class="blog-title">'.bloginfo('name').'</p>';
+							}					
+						?>
+						</li>
 						<li><a href="#sobre">Sobre</a></li>
 						<li><a href="#projetos">Projetos</a></li>
 						<li><a href="#voluntarios">Seja um Voluntario</a></li>
