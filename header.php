@@ -26,7 +26,8 @@
 
 	<?php if( have_rows('dados', 'option') ):
     while( have_rows('dados', 'option') ) : the_row(); 
-	$key = get_sub_field('chaves'); ?>
+	$keys = get_sub_field('chaves'); 
+	$phone = get_sub_field('telefone'); ?>
 	<pre>
 		<?php print_r(get_sub_field('telefone')); ?>
 	</pre>
@@ -36,16 +37,47 @@
 			<div class="container">
 				<div class="nav-wrapper">
 					<ul class="topbar">
-						<?php if ($key['mostrar'] == 'header'): if ($key['chave']): ?>
-						<li class="list-top"><i class="material-icons">account_balance</i><span class="content-top">
-							<?php _e('CHAVE PIX: ' . $key['chave']); ?></span></li>
-						<?php endif; endif; ?>
-						<?php if ($key['mostrar'] == 'header'): 
-							if ($key['numeros']): $phones = $key['numeros'];
-								foreach ($phones as $key => $value): ?>
-						<li class="list-top"><i class="material-icons">call</i><a class="link-top" href="#"><span
-									class="content-top">(11) 93719-0613</span></a></li>
-						<?php endforeach; endif; endif; ?>
+						<?php 
+						$view = $keys['mostrar'];
+						foreach ($view as $key => $value):
+							if ($value == 'header'): 
+								if ($keys['chave']): ?>
+
+								<li class="list-top">
+									<i class="material-icons">account_balance</i>
+									<span class="content-top">
+										<?php _e('CHAVE PIX: ' . $keys['chave']); ?>
+									</span>
+								</li>
+
+						<?php 
+								endif; 
+							endif;
+						endforeach;
+						
+						$view = $phone['mostrar'];
+
+						foreach ($view as $key_v => $value_v):
+							if ($value_v == 'header'): 
+								if ($phone['numeros']): 
+									$phones = $phone['numeros'];
+									foreach ($phones as $key => $value): ?>
+
+									<li class="list-top">
+										<i class="material-icons">call</i>
+										<a class="link-top" href="#">
+											<span class="content-top">
+												<?php _e($value['numero']); ?>
+											</span>
+										</a>
+									</li>
+
+						<?php 		
+									endforeach; 
+								endif; 
+							endif; 
+						endforeach; 
+						?>
 						<li class="list-top"><i class="material-icons">email</i><a class="link-top"
 								href="mailto:contato@larassistencialmatilde.com.br"><span
 									class="content-top">contato@larassistencialmatilde.com.br</span></a></li>
