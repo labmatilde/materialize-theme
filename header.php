@@ -24,12 +24,17 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-	<?php if( have_rows('dados', 'option') ):
-    while( have_rows('dados', 'option') ) : the_row(); 
-	$keys = get_sub_field('chaves'); 
-	$phone = get_sub_field('telefone'); ?>
+	<?php 
+	if( have_rows('dados', 'option') ):
+    	while( have_rows('dados', 'option') ) : 
+			the_row(); 
+			$keys = get_sub_field('chaves'); 
+			$phone = get_sub_field('telefone');
+			$email = get_sub_field('email');
+	
+	?>
 	<pre>
-		<?php print_r(get_sub_field('telefone')); ?>
+		<?php print_r(get_sub_field('email')); ?>
 	</pre>
 
 		<!-- TOP MENU -->
@@ -38,6 +43,7 @@
 				<div class="nav-wrapper">
 					<ul class="topbar">
 						<?php 
+
 						$view = $keys['mostrar'];
 						foreach ($view as $key => $value):
 							if ($value == 'header'): 
@@ -56,7 +62,6 @@
 						endforeach;
 						
 						$view = $phone['mostrar'];
-
 						foreach ($view as $key_v => $value_v):
 							if ($value_v == 'header'): 
 								if ($phone['numeros']): 
@@ -65,9 +70,9 @@
 
 									<li class="list-top">
 										<i class="material-icons">call</i>
-										<a class="link-top" href="#">
+										<a class="link-top" href="tel:<?php _e($value['ddi'] . $value['ddd'] . $value['numero']); ?>">
 											<span class="content-top">
-												<?php _e($value['numero']); ?>
+												<?php _e('(' . $value['ddd'] . ') ' . $value['numero']); ?>
 											</span>
 										</a>
 									</li>
@@ -77,16 +82,33 @@
 								endif; 
 							endif; 
 						endforeach; 
+
+						$view = $email['mostrar'];
+						foreach ($view as $key_v => $value_v):
+							if ($value_v == 'header'): 
+								if ($email['email']): ?>
+
+								<li class="list-top">
+									<i class="material-icons">email</i>
+									<a class="link-top" href="mailto:<?php _e($email['email']); ?>">
+										<span class="content-top"><?php _e($email['email']); ?></span>
+									</a>
+								</li>
+						<?php
+								endif;
+							endif;
+						endforeach;
 						?>
-						<li class="list-top"><i class="material-icons">email</i><a class="link-top"
-								href="mailto:contato@larassistencialmatilde.com.br"><span
-									class="content-top">contato@larassistencialmatilde.com.br</span></a></li>
+
 					</ul> <!-- .topbar -->
 				</div> <!-- .nav-wrapper -->
 			</div> <!-- .container -->
 		</div> <!-- #topbar -->
 	
-	<?php endwhile; endif; ?>
+	<?php 
+		endwhile; 
+	endif; 
+	?>
 
 		<nav class="nav-extended">
 			<div class="nav-wrapper">		        	
