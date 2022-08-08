@@ -129,7 +129,12 @@
 					</a>
 
 					<ul class="right hide-on-med-and-down">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary')); ?>
+						<li><a href="#sobre">Sobre</a></li>
+						<li><a href="#projetos">Projetos</a></li>
+						<li><a href="#voluntarios">Seja um Voluntario</a></li>
+						<li><a href="#eventos">Eventos</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="#contato">Contato</a></li>
 						<li><a href="#doe" class="waves-effect waves-light btn">Faça uma doação</a></li>
 					</ul>
 
