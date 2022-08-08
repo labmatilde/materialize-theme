@@ -25,9 +25,10 @@
 	<header id="masthead" class="site-header" role="banner">
 
 	<?php if( have_rows('dados', 'option') ):
-    while( have_rows('dados', 'option') ) : the_row(); ?>
+    while( have_rows('dados', 'option') ) : the_row(); 
+	$key = get_sub_field('chaves'); ?>
 	<pre>
-		<?php print_r(get_sub_field('chaves')); ?>
+		<?php print_r(get_sub_field('telefone')); ?>
 	</pre>
 
 		<!-- TOP MENU -->
@@ -35,12 +36,16 @@
 			<div class="container">
 				<div class="nav-wrapper">
 					<ul class="topbar">
-						<li class="list-top"><i class="material-icons">account_balance</i><span class="content-top">CHAVE
-								PIX: 40.416.297/0001-95</span></li>
+						<?php if ($key['mostrar'] == 'header'): if ($key['chave']): ?>
+						<li class="list-top"><i class="material-icons">account_balance</i><span class="content-top">
+							<?php _e('CHAVE PIX: ' . $key['chave']); ?></span></li>
+						<?php endif; endif; ?>
+						<?php if ($key['mostrar'] == 'header'): 
+							if ($key['numeros']): $phones = $key['numeros'];
+								foreach ($phones as $key => $value): ?>
 						<li class="list-top"><i class="material-icons">call</i><a class="link-top" href="#"><span
 									class="content-top">(11) 93719-0613</span></a></li>
-						<li class="list-top"><i class="material-icons">call</i><a class="link-top" href="#"><span
-									class="content-top">(11) 2053-0090</span></a></li>
+						<?php endforeach; endif; endif; ?>
 						<li class="list-top"><i class="material-icons">email</i><a class="link-top"
 								href="mailto:contato@larassistencialmatilde.com.br"><span
 									class="content-top">contato@larassistencialmatilde.com.br</span></a></li>
