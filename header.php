@@ -33,9 +33,6 @@
 			$email = get_sub_field('email');
 	
 	?>
-	<pre>
-		<?php print_r(get_sub_field('email')); ?>
-	</pre>
 
 		<!-- TOP MENU -->
 		<div id="topbar" class="menu-top-bar hide-on-med-and-down">
